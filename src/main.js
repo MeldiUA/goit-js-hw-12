@@ -67,12 +67,16 @@ function renderImg(hits = []){
 
 async function onSubmit(event){
     event.preventDefault();
+    gallery.innerHTML = '';
+    page = 1;
+
+
     loaderTop.style.display = 'block';
     loadImg.style.display = 'none';
 
+
     q = event.target.elements.search.value.trim();
     if (!q) {
-        gallery.innerHTML = '';
         iziToast.info({
           position: 'topRight',
           message: 'Error enter any symbols',
